@@ -1,0 +1,46 @@
+﻿<metro:MetroWindow x:Class="beidoujiaoyi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:beidoujiaoyi"
+        mc:Ignorable="d"
+        Title="北斗云教仪" Height="350" Width="525">
+    <metro:MetroWindow.Resources>
+        <Style x:Key="commandRct" TargetType="{x:Type Rectangle}">
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="Width" Value="15"/>
+        </Style>
+    </metro:MetroWindow.Resources>
+    <metro:MetroWindow.RightWindowCommands>
+        <metro:WindowCommands ItemsSource="{Binding WindowCommandsList}">
+            <Button Content="settings" />
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_book_contact}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="联系我们" />
+                </StackPanel>
+            </Button>
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="联系我们" />
+                </StackPanel>
+            </Button>
+        </metro:WindowCommands>
+    </metro:MetroWindow.RightWindowCommands>
+    <Grid>
+        <Button x:Name="listen" Content="listen" HorizontalAlignment="Left" Margin="167,103,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="send" Content="send" HorizontalAlignment="Left" Margin="376,103,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+
+    </Grid>
+</metro:MetroWindow>
