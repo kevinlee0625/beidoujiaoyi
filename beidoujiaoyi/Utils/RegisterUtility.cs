@@ -121,7 +121,9 @@ namespace beidoujiaoyi.Utils
     public enum EncryptionKeyEnum
     {
         KeyA,
-        KeyB
+        KeyB,
+        keyC
+
     }
 
     public class EncryptionHelper
